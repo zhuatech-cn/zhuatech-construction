@@ -107,3 +107,7 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 本仓库不包含真实业务数据、真实生产接口凭据或生产配置。请勿提交个人隐私与业务敏感信息、访问令牌、私钥或真实业务数据。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告；参与开发前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 关键词：知华科技 CONSTRUCTION、工程项目系统、施工运营管理、工程协同平台、Java 工程系统、Spring Boot CONSTRUCTION、Vue 企业管理系统、上海软件定制开发。
+
+## 施工进度偏差预测
+
+新增 `POST /api/construction/insights/schedule-variance`，对比计划与实际进度，结合施工速度、关键活动、天气延误和可追回进度预测完工结果，输出 `ON_TRACK`、`RECOVERY` 或 `DELAYED`。
