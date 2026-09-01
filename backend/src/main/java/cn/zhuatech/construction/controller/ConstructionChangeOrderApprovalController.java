@@ -1,0 +1,19 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.construction.controller;
+
+import cn.zhuatech.construction.common.ApiResponse;
+import cn.zhuatech.construction.service.ConstructionChangeOrderApprovalService;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/enterprise/construction")
+public class ConstructionChangeOrderApprovalController {
+    private final ConstructionChangeOrderApprovalService service;
+    public ConstructionChangeOrderApprovalController(ConstructionChangeOrderApprovalService service) { this.service = service; }
+    @PostMapping("/change-order-approval")
+    public ApiResponse<ConstructionChangeOrderApprovalService.Assessment> assess(
+            @Valid @RequestBody ConstructionChangeOrderApprovalService.Request request) {
+        return ApiResponse.ok(service.assess(request));
+    }
+}

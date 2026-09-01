@@ -111,3 +111,7 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 ## 施工进度偏差预测
 
 新增 `POST /api/construction/insights/schedule-variance`，对比计划与实际进度，结合施工速度、关键活动、天气延误和可追回进度预测完工结果，输出 `ON_TRACK`、`RECOVERY` 或 `DELAYED`。
+
+## 企业级工程变更审批
+
+新增 `POST /api/enterprise/construction/change-order-approval`，覆盖范围、造价、工期、安全、设计、合同、资金、采购和应急，返回 `APPROVE / COORDINATE / BLOCKED`。详见 [工程变更说明](docs/ENTERPRISE_CHANGE_ORDER.md)。
