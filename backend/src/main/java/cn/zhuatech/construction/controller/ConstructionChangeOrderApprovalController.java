@@ -6,11 +6,20 @@ import cn.zhuatech.construction.service.ConstructionChangeOrderApprovalService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/construction")
 public class ConstructionChangeOrderApprovalController {
     private final ConstructionChangeOrderApprovalService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ConstructionChangeOrderApprovalController(ConstructionChangeOrderApprovalService service) { this.service = service; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/change-order-approval")
     public ApiResponse<ConstructionChangeOrderApprovalService.Assessment> assess(
             @Valid @RequestBody ConstructionChangeOrderApprovalService.Request request) {

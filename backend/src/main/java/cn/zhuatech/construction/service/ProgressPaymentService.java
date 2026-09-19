@@ -10,8 +10,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ProgressPaymentService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public PaymentDecision evaluate(PaymentRequest request) {
         BigDecimal recognized = request.measuredAmount().add(request.approvedChangeAmount())
             .min(request.claimedAmount()).min(request.contractAmount());
@@ -30,12 +36,18 @@ public class ProgressPaymentService {
         return new PaymentDecision(eligible, variance, decision, reasons);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record PaymentRequest(@NotNull @DecimalMin("0.01") BigDecimal contractAmount,
         @NotNull @DecimalMin("0.00") BigDecimal claimedAmount,
         @NotNull @DecimalMin("0.00") BigDecimal measuredAmount,
         @NotNull @DecimalMin("0.00") BigDecimal approvedChangeAmount,
         @NotNull @DecimalMin("0.00") @DecimalMax("100.00") BigDecimal retentionRate,
         @NotNull Boolean documentsComplete, @NotNull Boolean safetyHold) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record PaymentDecision(BigDecimal eligibleAmount, BigDecimal variance,
         String decision, List<String> reasons) {}
 }
