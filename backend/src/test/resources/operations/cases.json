@@ -1,0 +1,52 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "earned": "#60000",
+      "retained": "#6000",
+      "candidatePayment": "#9000",
+      "overpaid": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "previousPaid": "49000"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "previousPaid": "60000"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "overpaid": "#11000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "completedPct": "0",
+      "previousPaid": "0",
+      "advanceRecovery": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "retentionPct": "100"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  }
+]
